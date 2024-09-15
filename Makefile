@@ -7,13 +7,13 @@ CC = gcc
 TARGET = my_add
 
 # Source files
-SRCS = my_add.c
+SRCS = my_add.c calculator.c input.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
 
 # Compilation flags
-CFLAGS = -Wall  -ansi -pedantic # -Wno-uninitialized
+CFLAGS = -Wall -ansi -pedantic # -Wno-uninitialized
 
 # Default target
 all: $(TARGET)
