@@ -15,8 +15,15 @@ OBJS = $(SRCS:.c=.o)
 # Compilation flags
 CFLAGS = -Wall -ansi -pedantic # -Wno-uninitialized
 
+# Debug flags
+DEBUG_FLAGS = -g
+
 # Default target
 all: $(TARGET)
+
+# Debug target
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: $(TARGET)
 
 # Linking the object files to create the executable
 $(TARGET): $(OBJS)
