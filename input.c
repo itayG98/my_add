@@ -14,7 +14,7 @@ int isBaseTwo(unsigned int toCheck)
     return 1;
 }
 
-unsigned int getNum()
+unsigned int getBaseTwoNum()
 {
     int num, inputSucces;
     printf("Please insert a number in base two (zero or ones only).\n");
