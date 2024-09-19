@@ -1,29 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
 
-int isBaseTwo(unsigned int toCheck)
+unsigned int *getNumbers()
 {
-    int digit;
-    for (; toCheck > 0; toCheck /= 10)
+    unsigned int* numbers = (unsigned int*)malloc(2 * sizeof(unsigned int)); 
+    int isSuccess = 0;
+    printf("Please insert two unsigned numbers separated by spaces:\n");
+    do
     {
-        digit = toCheck % 10;
-        if (digit != 0 && digit != 1)
+        isSuccess = scanf("%u %u", &numbers[0], &numbers[1]);
+        if (isSuccess != 2 || numbers[0] > UINT_MAX || numbers[1] > UINT_MAX)
         {
-            return 0;
+            printf("Invalid input. Please enter two valid unsigned numbers again.\n");
+            while (getchar() != '\n'){}
         }
-    }
-    return 1;
-}
-
-unsigned int getBaseTwoNum()
-{
-    int num, inputSucces;
-    printf("Please insert a number in base two (zero or ones only).\n");
-    inputSucces = scanf("%d", &num);
-    if (inputSucces != 0 && isBaseTwo((unsigned int)num))
-    {
-        printf("Got %d\n", num);
-        return num;
-    }
-    printf("Invalid input or not a base two number.\n");
-    return num;
+    } while (isSuccess != 2);
+    return numbers;
 }
