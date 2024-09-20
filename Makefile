@@ -7,7 +7,7 @@ CC = gcc
 TARGET = my_add
 
 # Source files
-SRCS = my_add.c calculator.c input.c
+SRCS = my_add.c calculator.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
