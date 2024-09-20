@@ -4,8 +4,8 @@
 /**
  * @brief Entry point for the binary representation demonstration.
  *
- * This function prompts the user for an unsigned integer, reads the input, 
- * and calls `print_binary` to display its binary representation by division 
+ * This function prompts the user for an unsigned integer, reads the input,
+ * and calls `print_binary` to display its binary representation by division
  * and `print_binary_with_mask` to print it bit by bit using bitwise operations.
  * The user is prompted to press any key before the program terminates.
  * *
@@ -30,9 +30,9 @@ int main()
 /**
  * @brief Prints the binary representation of an unsigned integer, bit by bit via stdout.
  *
- * This function takes an unsigned integer and prints its binary representation 
+ * This function takes an unsigned integer and prints its binary representation
  * directly, bit by bit. It uses a mask starting at the most significant bit (MSB)
- * and shifts the mask right on each iteration to check each bit. For each bit, 
+ * and shifts the mask right on each iteration to check each bit. For each bit,
  * it prints either '1' or '0' depending on whether the bit is set.
  *
  * @param toPrint The unsigned integer whose binary representation will be printed.
@@ -46,13 +46,13 @@ int print_binary_with_mask(unsigned toPrint)
 {
     int bits_number = sizeof(toPrint) * 8;
     int i = 0;
-    unsigned int mask = 1 << (bits_number- 1);
+    unsigned int mask = 1 << (bits_number - 1);
     while (i < bits_number)
     {
-        printf("%c",(mask & toPrint) ? '1' : '0');
+        printf("%c", (mask & toPrint) ? '1' : '0');
         mask >>= 1;
         i++;
     }
-      printf("\n");
+    printf("\n");
     return 1;
 }
