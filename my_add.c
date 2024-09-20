@@ -21,37 +21,9 @@ int main()
     unsigned int a;
     printf("Please insert unsigned number.\n");
     scanf("%u", &a);
-    print_binary(a);
     print_binary_with_mask(a);
     printf("Press any key to continue...\n");
     _getch();
-    return 1;
-}
-
-/**
- * @brief Converts an unsigned integer to its binary representation and then prints it via stdout.
- *
- * This function converts a given unsigned integer to its binary representation by repeatedly
- * dividing the number by 2 and capturing the remainder (binary digit). The binary number is
- * stored as a decimal number, and then printed.
- *
- * @param toPrint The unsigned integer to be printed in binary representation. *
- * Example usage:
- * @code
- *    print_binary(5) print 101
- * @endcode
- */
-int print_binary(unsigned toPrint)
-{
-    unsigned int binaryRes = 0, reminder = 0, i = 1;
-    while (toPrint > 0)
-    {
-        reminder = toPrint % 2;
-        toPrint = toPrint / 2;
-        binaryRes = binaryRes + (reminder * i);
-        i = i * 10;
-    }
-    printf("The number is: %u\n", binaryRes);
     return 1;
 }
 
